@@ -2,6 +2,7 @@
 var counter = 1;
 var articleContainer = document.getElementById("articleContainer");
 var btnShowArticle = document.getElementById("btnShowArticle");
+var title = document.getElementById("title");
 var visited = false;
 //create an event listener for the button 
 btnShowArticle.addEventListener("click", function(){
@@ -30,11 +31,11 @@ btnShowArticle.addEventListener("click", function(){
 //create a function that will display the data from the file
 function renderHTML(data){
 	//create a variable that will store the data from the file
-	var htmlString = data.title;
-	
+	var htmlString="";
+	title = data.title;
 	//iterate through the body array from the JSON file to retrieve all the objects
 	for(i=0; i < data.body.length; i++){
-		htmlString += "<p>" + data.body[i].type + ".</p>";
+		//htmlString += "<p>" + data.body[i].type + ".</p>";
 		
 		//check if the type of the data is a heading
 		if (data.body[i].type == "heading"){
@@ -49,7 +50,7 @@ function renderHTML(data){
 		//check if the type of the data is image
 		if (data.body[i].type == "image"){
 			htmlString += "<img src=" + data.body[i].model.url + 
-			" alt="+ data.body[i].model.altText + " width=" + 
+			" alt="+ data.body[i].model.altText + "class='center' width=" + 
 			data.body[i].model.width + " height=" + 
 			data.body[i].model.height + ">";
 		}
