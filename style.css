@@ -1,0 +1,26 @@
+header {
+	background-color:red;
+	width: 70%;
+	margin: 0 auto;
+	
+}
+header h1{
+	text-align:center;
+	color: white;
+}
+
+#articleContainer{
+	
+	width: 70%;
+	margin: 0 auto;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+	width: 50%;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
