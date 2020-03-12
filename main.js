@@ -1,5 +1,8 @@
 //create a counter that will be used to display the articles
 document.getElementById("formContainer").style.display = "none";
+document.getElementById("btnRank").style.display = "none";
+
+
 var counter = 1;
 var articleContainer = document.getElementById("articleContainer");
 var btnShowArticle = document.getElementById("btnShowArticle");
@@ -8,7 +11,8 @@ var visited = false;
 
 //create an event listener for the button 
 btnShowArticle.addEventListener("click", function(){
-	
+	document.getElementById("welcome").style.display = "none";
+	btnShowArticle.innerHTML ="Click to see Article "+ (counter + 1);
 	
 	//articleContainer.insertAdjacentHTML('beforeend', "this is a test");
 	//create an XMLHttpRequest
@@ -22,17 +26,22 @@ btnShowArticle.addEventListener("click", function(){
 	fileRequest.send(); 
 	
 	//check if the counter if less than 5
-	if( counter < 5 )
+	if( counter < 5 ){
 		//increment the counter so that the next article is being accessed
 		counter++;
-		
+	}	
 	else
 	{
 		//this means the user have see the five articles
 		visited = true;	
+		document.getElementById("btnRank").style.display = "block";
+		document.getElementById("formContainer").style.display = "block";
+
+		
 		//change the counter back to one
 		counter = 1;
-	}
+		btnShowArticle.innerHTML ="Click to see Article 1";
+	} 
 });
 
 
@@ -76,36 +85,8 @@ function renderHTML(data){
 			}
 		}
 		
-		
-		
-		//htmlString += "<p>" + JSON.stringify(data.body[i]) +".</p>";
-		//for(j=0; j < data.body.model)
 	}
 	
-	if(visited == true){
-		document.getElementById("formContainer").style.display = "block";
-		/* htmlString += "<table>" +
-		"<form name='RankForm'>" +
-		"<tr> <th>Article</th> <th>Ranking</th> </tr>" +
-		"<tr> <td> <label for='article1'> Article 1 </label> </td>"+
-		"<td><input type='number' id='article1' name='article1' min=1 max=5 required></td> </tr>" +
-		
-		"<tr> <td> <label for='article2'> Article 2 </label> </td>"+
-		"<td><input type='number' id='article2' name='article2' min=1 max=5 required></td> </tr>" +
-		
-		"<tr> <td> <label for='article3'> Article 3 </label> </td>"+
-		"<td><input type='number' id='article3' name='article3' min=1 max=5 required></td> </tr>" +
-		
-		"<tr> <td> <label for='article4'> Article 4 </label> </td>"+
-		"<td><input type='number' id='article4' name='article4' min=1 max=5 required></td> </tr>" +
-		
-		"<tr> <td> <label for='article5'> Article 5 </label> </td>"+
-		"<td><input type='number' id='article5' name='article5' min=1 max=5 required></td> </tr>" +
-
-		"<tr> <td> <input type='submit' value='Submit'> </td> </tr> " +
-		"</form> </table>"; */
-
-	}
 	
 
 	articleContainer.innerHTML = "";
@@ -113,22 +94,32 @@ function renderHTML(data){
 
 	
 }
-var rankForm = document.getElementById('rankForm');
-    rankForm.addEventListener('submit', function(){
-		var article1 = document.getElementById('article1');
-		var article2 = document.getElementById('article2');
-		var article3 = document.getElementById('article3');
-		var article4 = document.getElementById('article4');
-		var article5 = document.getElementById('article5');
-		if(article1.value == article2.value){
-			alert("the values are the same!");
-			return false;
-		}
-		else{
-			alert("the infomation was sent")
-			return true
-			
-		}
-	});
+
+	
+function validate(){
+	var name = document.getElementById("name");
+	var article1 = document.getElementById('article1');
+	var article2 = document.getElementById('article2');
+	var article3 = document.getElementById('article3');
+	var article4 = document.getElementById('article4');
+	var article5 = document.getElementById('article5');
+	if((article1.value == article2.value) || (article1.value == article3.value) || (article1.value == article4.value) || (article1.value == article5.value)
+		|| (article2.value == article3.value)|| (article2.value == article4.value) || (article2.value == article5.value)
+		|| (article3.value == article4.value) || (article3.value == article5.value) || (article4.value == article5.value)){
+		alert("the values are the same!");
+		return false;
+	}
+	else{
+		alert(" Dear " + name.value +", \n The infomation was sent! \n The ranking submited is:" +
+		"\n Article 1 - position in ranking: " + article1.value +
+		"\n Article 2 - position in ranking: " + article2.value +
+		"\n Article 3 - position in ranking: " + article3.value +
+		"\n Article 4 - position in ranking: " + article4.value +
+		"\n Article 5 - position in ranking: " + article5.value +
+		"\n Thank you!")
+		return true;
+		
+	}
+}
 
 	
