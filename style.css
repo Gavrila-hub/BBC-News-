@@ -24,3 +24,9 @@ img {
 	margin-bottom: 2px;
 }
 
+#formContainer{
+	width: 70%;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+
