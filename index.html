@@ -2,7 +2,7 @@
 
 <html>
 <head>
-
+<!--link to css file-->
 <link rel=stylesheet type=text/css href=style.css>
 <title id="title"> </title>
 </head>
@@ -13,9 +13,71 @@
 		<h1> BBC News Articles </h1>
 		<button id="btnShowArticle"> Show the first article </button>
 	</header>
-	
+	<!-- create containers that will staore the file and the form -->
 	<div id="articleContainer"> </div>
-	
+	<div id="formContainer"> 
+	<hr>
+		<!--start of the form -->
+	<!-- create a table -->
+	<table>
+	<!-- create a form -->
+	<form id="rankForm" method="POST"> 
+		
+		<label> Enter your details: </label>
+		<tr>
+			<td>
+				<label for="name"> Full Name: </label>
+			</td>
+			<td>
+				<input type="text" name="name" id="name" placeholder="Enter your full name" required>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="email"> Email: </label>
+			</td>
+			<td>
+				<input type="email" name="email" id="email" placeholder="Email Address" required> 
+			</td>	
+		</tr>
+		<tr>
+			<td> Fill the ranking form: </td>
+		</tr>
+		<tr> 
+			<td> Article: </td>
+			<td> Rank Position: </td>
+		</tr>
+		<tr>
+			<td> Article 1 </td>
+			<td> <input type='number' id='article1' name='article1' min=1 max=5 required> </td>
+		</tr>
+		<tr>
+			<td> Article 2 </td>
+			<td> <input type='number' id='article2' name='article2' min=1 max=5 required> </td>
+		</tr>
+		<tr>
+			<td> Article 3 </td>
+			<td> <input type='number' id='article3' name='article3' min=1 max=5 required> </td>
+		</tr>
+		<tr>
+			<td> Article 4 </td>
+			<td> <input type='number' id='article4' name='article4' min=1 max=5 required> </td>
+		</tr>
+		<tr>
+			<td> Article 5 </td>
+			<td> <input type='number' id='article5' name='article5' min=1 max=5 required> </td>
+		</tr>
+		
+		<tr>
+			<!-- submit and reset buttons -->				
+			<td>
+				<input type="submit" name="button" id="submitButton" value="Send">
+				<input type="reset"2 name="button" id="resetButton" value="Reset">
+			</td>
+		</tr>
+	</form> <!-- form ends here -->
+	<table>
+	</div>
 	<script src="main.js"> </script>
 </body>
 </html>
