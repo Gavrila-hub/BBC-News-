@@ -1,18 +1,27 @@
+
 header {
-	background-color:red;
+	background-color: #bb1919;
 	width: 70%;
 	margin: 0 auto;
+	padding-left: 10px;
 	
 }
 header h1{
 	text-align:center;
 	color: white;
+	
 }
 
 #articleContainer{
-	
+	background-color: white;
 	width: 70%;
 	margin: 0 auto;
+	padding-left: 10px;
+	
+}
+
+#welcome{
+	text-align:center;
 }
 
 img {
@@ -25,8 +34,48 @@ img {
 }
 
 #formContainer{
+	background-color: #4c4c4c;
+	color: white;
 	width: 70%;
 	margin: 0 auto;
 	padding-top: 10px;
+	padding-left: 10px;
+	text-align: right;
 }
+
+#details{
+	text-align: left;
+}
+
+body{
+	background-color: #EAEAEA;
+}
+
+a:link {
+  text-decoration: none;
+ 
+}
+
+button{
+	border-radius: 12px;
+	font-size: 20px;
+}
+
+button:hover, #submitButton:hover , #resetButton:hover{
+	background-color: black;
+	color:white;
+}
+
+#btnShowArticle{
+    animation:blinkingText 1.2s;
+}
+@keyframes blinkingText{
+    0%{     color: #000; }
+    50%{    color: #000; }
+    60%{    color: transparent;}
+    99%{    color:transparent;}
+    100%{   color: #222;}
+}
+
+
 
