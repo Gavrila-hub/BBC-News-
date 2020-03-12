@@ -10,42 +10,48 @@
 <body>
 
 	<header>
-		<h1> BBC News Articles </h1>
-		<button id="btnShowArticle"> Show the first article </button>
+		<h1> NEWS </h1>
+		
+		<button id="btnShowArticle"> Click to see Article 1 </button>
+		<a href="#formContainer"><button id="btnRank">Ranking </button></a>
+		
 	</header>
 	<!-- create containers that will staore the file and the form -->
 	<div id="articleContainer"> </div>
+	<div id="welcome"> 
+		<h1> WELCOME </h1>
+	</div>
+		
+	
+	
 	<div id="formContainer"> 
-	<hr>
-		<!--start of the form -->
+	
+	
 	<!-- create a table -->
 	<table>
 	<!-- create a form -->
-	<form id="rankForm" method="POST"> 
+	<form id="rankForm" onsubmit="return validate()"method="POST"> 
 		
-		<label> Enter your details: </label>
+		<h2 id="details"> Ranking: </h2>
 		<tr>
-			<td>
+			<th>
 				<label for="name"> Full Name: </label>
-			</td>
+			</th>
 			<td>
 				<input type="text" name="name" id="name" placeholder="Enter your full name" required>
 			</td>
 		</tr>
 		<tr>
-			<td>
+			<th>
 				<label for="email"> Email: </label>
-			</td>
+			</th>
 			<td>
 				<input type="email" name="email" id="email" placeholder="Email Address" required> 
 			</td>	
 		</tr>
-		<tr>
-			<td> Fill the ranking form: </td>
-		</tr>
 		<tr> 
-			<td> Article: </td>
-			<td> Rank Position: </td>
+			<th> Article: </th>
+			<th> Rank Position: </th>
 		</tr>
 		<tr>
 			<td> Article 1 </td>
