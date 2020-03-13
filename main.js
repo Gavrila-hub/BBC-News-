@@ -1,20 +1,21 @@
-//create a counter that will be used to display the articles
+//do not display the form container and the ranking button
 document.getElementById("formContainer").style.display = "none";
 document.getElementById("btnRank").style.display = "none";
 
-
+//create a counter that will be used to display the articles
 var counter = 1;
+//create variables that access the elements form index.html
 var articleContainer = document.getElementById("articleContainer");
 var btnShowArticle = document.getElementById("btnShowArticle");
 var title = document.getElementById("title");
-var visited = false;
 
-//create an event listener for the button 
+//create an event listener for the button displayed on the index page
 btnShowArticle.addEventListener("click", function(){
+	//hide the 'welcome' message
 	document.getElementById("welcome").style.display = "none";
+	//change the value of the button
 	btnShowArticle.innerHTML ="Click to see Article "+ (counter + 1);
 	
-	//articleContainer.insertAdjacentHTML('beforeend', "this is a test");
 	//create an XMLHttpRequest
 	var fileRequest = new XMLHttpRequest();
 	//use the HTTP GET request to access the JSON file
@@ -32,14 +33,16 @@ btnShowArticle.addEventListener("click", function(){
 	}	
 	else
 	{
-		//this means the user have see the five articles
-		visited = true;	
+		//this means the user have seen the five articles
+		//dispay the ranking button 
+		//display the form container
 		document.getElementById("btnRank").style.display = "block";
 		document.getElementById("formContainer").style.display = "block";
 
-		
 		//change the counter back to one
 		counter = 1;
+		
+		//change the value of the button
 		btnShowArticle.innerHTML ="Click to see Article 1";
 	} 
 });
@@ -87,29 +90,33 @@ function renderHTML(data){
 		
 	}
 	
-	
-
+	//remove everything from the article container
 	articleContainer.innerHTML = "";
-	articleContainer.insertAdjacentHTML('beforeend', htmlString);
-
 	
+	//display the article
+	articleContainer.insertAdjacentHTML('beforeend', htmlString);	
 }
 
-	
+//create a function to validate the form
 function validate(){
+	//access the elements from the form
 	var name = document.getElementById("name");
 	var article1 = document.getElementById('article1');
 	var article2 = document.getElementById('article2');
 	var article3 = document.getElementById('article3');
 	var article4 = document.getElementById('article4');
 	var article5 = document.getElementById('article5');
+	
+	//check if the values of the input fields are the same
 	if((article1.value == article2.value) || (article1.value == article3.value) || (article1.value == article4.value) || (article1.value == article5.value)
 		|| (article2.value == article3.value)|| (article2.value == article4.value) || (article2.value == article5.value)
 		|| (article3.value == article4.value) || (article3.value == article5.value) || (article4.value == article5.value)){
-		alert("the values are the same!");
-		return false;
+		alert(" The values are the same! \n To rank the article, please specify the position in the ranking. \n The positions must be different. \n The articles can be ranked from 1  to 5");
+		return false;	
 	}
-	else{
+	//this is accessed only if the values are not the same
+	else{ 
+		//display an alert message to confirm the submission
 		alert(" Dear " + name.value +", \n The infomation was sent! \n The ranking submited is:" +
 		"\n Article 1 - position in ranking: " + article1.value +
 		"\n Article 2 - position in ranking: " + article2.value +
@@ -117,9 +124,13 @@ function validate(){
 		"\n Article 4 - position in ranking: " + article4.value +
 		"\n Article 5 - position in ranking: " + article5.value +
 		"\n Thank you!")
-		return true;
-		
 	}
+
+
 }
+	
+	
+
+
 
 	
