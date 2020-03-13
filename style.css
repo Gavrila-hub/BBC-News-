@@ -1,0 +1,138 @@
+/* change the style of the header*/
+
+header {
+	background-color: #bb1919; /* change background colour*/
+	width: 70%;                /* change the width*/
+	margin: 0 auto;            /* change margin*/
+	padding-left: 10px;	       /* change the padding */
+}
+
+/* change the style of the h1 included in the header*/
+header h1{
+	color: white;              /* change the text colour*/
+	padding-bottom: 20px;
+	padding-top: 20px;
+	
+}
+
+/* change the style of the article container*/
+#articleContainer{
+	background-color: white;
+	width: 70%;
+	margin: 0 auto;
+	padding-left: 10px;
+	
+}
+
+/* change the style of the 'welcome' 
+message that includes the instructions too*/
+#welcome{
+	width: 70%;
+	margin: 0 auto;
+	padding-bottom: 350px;
+}
+
+/* change the style of the h1 which is the "WELCOME" text*/
+#welcome h1{
+	text-align: center;        /* position the text in the center*/
+}
+
+/* change the style of the instructions*/
+#instructions{
+	margin: 0;
+}
+
+/* change the style of the images*/
+img {
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+	width: 50%;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+/* change the style of the form container*/
+#formContainer{
+	background-color: #4c4c4c;
+	color: white;
+	width: 70%;
+	margin: 0 auto;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+/* align the header "Ranking" to the left*/
+#details{
+	text-align: left;
+}
+
+/* change the background-color of the body*/
+body{
+	background-color: #EAEAEA;
+}
+
+/* change the style of the anchors*/
+a:link {
+  text-decoration: none;        /*remove the 'underline' */
+}
+a:hover{
+	background-color:black;
+	color: white;
+}
+
+/* change the style of the buttons*/
+button{
+	width:100%;
+	font-size: 20px;
+	padding:10px;
+	margin-bottom: 5px;
+}
+
+/* change the style of the buttons when the cursor is on them*/
+button:hover, #submitButton:hover , #resetButton:hover{
+	background-color: black;
+	color:white;
+}
+
+/* apply blinking text for the button*/
+#btnShowArticle{
+    animation:blinkingText 1.2s;
+}
+/* create blinkingText */
+@keyframes blinkingText{
+    0%{     color: #000; }
+    50%{    color: #000; }
+    60%{    color: transparent;}
+    99%{    color:transparent;}
+    100%{   color: #222;}
+}
+
+/* change the style of the footer*/
+#footer{
+	background-color: #bb1919;
+	width: 70%;
+	margin: 0 auto;
+	padding-left: 10px;
+	color: white;
+	text-align: center;
+}
+
+/* change the style of the space where the buttons are positioned*/
+#divBtnShow{
+	width: 70%;
+	margin: 0 auto;
+}
+
+/* change the style of the form data*/
+#left{
+	text-align:left;
+}
+#right{
+	text-align:right;
+	padding-right: 20px;
+}
+
+
+
+
